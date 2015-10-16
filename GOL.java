@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gol;
 
 import javafx.application.Application;
@@ -20,32 +15,34 @@ import javafx.stage.Stage;
 public class GOL extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
+    // Annotation to indicate that the method of the superclass is overridden
+    
     /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
+    * This is the main entry point for JavaFX application.
+    * A Stage is the top level container for the user interface, and a Scene is 
+    * the container for all (visual and control) content.
+    */
+    public void start(Stage primaryStage)
+    {
+//        Grid grid = new Grid();
+//        View view = new View(grid);
+      
+//
+        
+        
+//        primaryStage.setTitle("Game of Life");
+//        primaryStage.setScene(view.getUI());
+//        primaryStage.show();
+        
+        // TODO: Loop through input, grid and view updates
     }
     
+    /**
+     * This should not be called in a JavaFX application, but if it is called 
+     * then the command line arguments are passed to the application
+     */
+    public static void main(String[] args)
+    {
+        launch(args);
+    }    
 }
