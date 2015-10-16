@@ -4,12 +4,12 @@ package gol;
  *
  * 
  */
-class Tuple<T0, T1>
+class Position
 {
-    public T0 first;
-    public T1 second;
+    public int first;
+    public int second;
     
-    public Tuple(T0 first, T1 second)
+    public Position(int first, int second)
     {
         this.first = first;
         this.second = second;
