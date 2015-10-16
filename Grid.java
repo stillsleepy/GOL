@@ -13,8 +13,14 @@ package gol;
 public abstract class Grid
 {
     
+    // TODO: Add fields here (e.g. height and width of grid, the array 
+    // representing the grid, etc)
+    
+    
     public abstract void toggle(int x, int y);
     public abstract void update();
+    public abstract Position[] getNeighbours(int x, int y);
+    
     
     
 }
