@@ -9,7 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
- *
+ * test
  * 
  */
 public class GOL extends Application {
@@ -24,6 +24,7 @@ public class GOL extends Application {
     */
     public void start(Stage primaryStage)
     {
+        
 //        Grid grid = new Grid();
 //        View view = new View(grid);
       
