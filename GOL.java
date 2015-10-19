@@ -26,8 +26,34 @@ public class GOL extends Application {
     {
         
 //        Grid grid = new Grid();
-//        View view = new View(grid);
+        Grid grid = new ConwayGrid(10, 10);
+//        Toggle cell - blinker pattern
+        //grid.print();
+        //System.out.println();
+        grid.toggle(5,5);
+        grid.toggle(5,4);
+        grid.toggle(5,6);
+        grid.toggle(4,5);
+        grid.toggle(4,7);
+        grid.toggle(4,6);
+        //grid.print();
+        //System.out.println();
+//        Update grid
+        //grid.update();
+
+        //grid.print();
+        //System.out.println();
+        
+        boolean isRunning = false;
+        while(isRunning)
+        {
+            grid.update();
+            Thread.sleep(1000);
+        }
       
+        View gui = new View(grid);
+        primaryStage.setScene(gui.getUI());
+        primaryStage.show();
 //
         
         
