@@ -28,6 +28,26 @@ public class View
     public View(Grid gameGrid)
     {
         this.gameGrid = gameGrid;
+        createScene();
+    }
+    
+    public Scene getScene()
+    {
+        return ui;
+    }
+    
+    public void setScene(Scene s)
+    {
+        ui = s;
+    }
+    
+    public Grid getGameGrid()
+    {
+        return gameGrid;
+    }
+    
+    public void createScene()
+    {
         pane = new GridPane();
         pane.setAlignment(Pos.CENTER);
         pane.setHgap(10);
@@ -75,19 +95,21 @@ public class View
         stopgo.setText("Start");
         
         mainPane.getChildren().addAll(stopgo, pane, title);
-        mainPane.setTopAnchor(stopgo, 10.0);
-        mainPane.setRightAnchor(stopgo, 10.0);        
-        mainPane.setTopAnchor(title, 10.0);
-        mainPane.setLeftAnchor(title, 10.0);
-        mainPane.setTopAnchor(pane, 20.0);
+        AnchorPane.setTopAnchor(stopgo, 10.0);
+        AnchorPane.setRightAnchor(stopgo, 10.0);        
+        AnchorPane.setTopAnchor(title, 10.0);
+        AnchorPane.setLeftAnchor(title, 10.0);
+        AnchorPane.setTopAnchor(pane, 20.0);
         
         ui = new Scene(mainPane, 800, 600);
         
         // gameGrid = grid;
+        
     }
     
-    public Scene getUI()
+    public void update()
     {
-        return ui;
+        //TODO
     }
+    
 }
