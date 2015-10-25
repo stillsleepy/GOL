@@ -3,7 +3,7 @@
 ## Synopsis
 
 An application for Conway's Game of Life, created as a learning exercise 
-for learning Java programming and creating JavaFX program.
+for Java programming and creating JavaFX program.
 
 ## Contributors
 
