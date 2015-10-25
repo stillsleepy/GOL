@@ -1,18 +1,22 @@
 package gol;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
- * test
+ * 
  * 
  */
-public class GOL extends Application {
+public class GOL extends Application 
+{
+    public static boolean isRunning = false;
+    private int delay = 3; // Delay for updating the grid in seconds
+    private Grid gameGrid;
+    private View gui;
     
     @Override
     // Annotation to indicate that the method of the superclass is overridden
@@ -25,43 +29,34 @@ public class GOL extends Application {
     public void start(Stage primaryStage)
     {
         
-//        Grid grid = new Grid();
-        Grid grid = new ConwayGrid(10, 10);
+        gameGrid = new ConwayGrid(10, 10);
 //        Toggle cell - blinker pattern
         //grid.print();
         //System.out.println();
-        grid.toggle(5,5);
-        grid.toggle(5,4);
-        grid.toggle(5,6);
-        grid.toggle(4,5);
-        grid.toggle(4,7);
-        grid.toggle(4,6);
-        //grid.print();
-        //System.out.println();
-//        Update grid
-        //grid.update();
+        gameGrid.toggle(5,5);
+        gameGrid.toggle(5,4);
+        gameGrid.toggle(5,6);
+        gameGrid.toggle(4,5);
+        gameGrid.toggle(4,7);
+        gameGrid.toggle(4,6);
 
-        //grid.print();
-        //System.out.println();
-        
-        boolean isRunning = false;
-        while(isRunning)
-        {
-            grid.update();
-            Thread.sleep(1000);
-        }
-      
-        View gui = new View(grid);
-        primaryStage.setScene(gui.getUI());
-        primaryStage.show();
-//
-        
-        
-//        primaryStage.setTitle("Game of Life");
-//        primaryStage.setScene(view.getUI());
-//        primaryStage.show();
-        
         // TODO: Loop through input, grid and view updates
+                
+        gui = new ViewRectangleCell(gameGrid);
+        primaryStage.setScene(gui.getScene());
+        
+//        Timeline timeline = new Timeline(new KeyFrame(
+//        Duration.millis(delay*1000),
+//        ae -> update()));
+//        timeline.setCycleCount(Animation.INDEFINITE);
+//        timeline.play(); //plays animation
+//        timeline.pause(); //pause animation
+
+        
+        
+        primaryStage.show();
+        
+        
     }
     
     /**
@@ -71,5 +66,6 @@ public class GOL extends Application {
     public static void main(String[] args)
     {
         launch(args);
-    }    
+    }
+    
 }

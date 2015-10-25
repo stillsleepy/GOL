@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gol;
 
 /**
@@ -13,7 +8,6 @@ public class ConwayGrid extends Grid
 {
     // Creates a grid with dimensions (x, y)
 
-    
     public ConwayGrid(int width, int height)
     {
         this.width = width;
@@ -22,6 +16,7 @@ public class ConwayGrid extends Grid
     }
     
     // Updates the grid to the subsequent generation
+    @Override
     public void update()
     {
         int i;
@@ -74,7 +69,8 @@ public class ConwayGrid extends Grid
         grid = nextGrid;
     }
     
-        public void print() 
+    @Override
+    public void print() 
     {
         for(int i=0; i<10 ; i++)
         {
@@ -92,10 +88,10 @@ public class ConwayGrid extends Grid
             System.out.println();
         }
     }
-        // Toggles the value of the cell
-        public void toggle(int x, int y)
-        {
-            grid[x][y] = !grid[x][y];
-        }
+
+    // Toggles the value of the cell
+    @Override
+    public void toggle(int x, int y)
+    { grid[x][y] = !grid[x][y]; }
         
 }
